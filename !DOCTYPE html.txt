@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hybrid Office Supplies LLC - Your trusted office supplies partner in Abu Dhabi. Quality stationery, printing materials, and business essentials with fast delivery.">
+    <meta name="keywords" content="Office supplies Abu Dhabi, Stationery store Abu Dhabi, Office stationery supplier UAE, A4 paper supplier Abu Dhabi, Office equipment store Abu Dhabi">
+    <title>Hybrid Office Supplies LLC | Office Supplies Abu Dhabi</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --bg-card-hover: #334155;
+            --primary-orange: #f97316;
+            --primary-orange-hover: #ea580c;
+            --accent-orange-light: #fdba74;
+            --text-white: #ffffff;
+            --text-gray: #94a3b8;
+            --text-light: #cbd5e1;
+            --border-color: #334155;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-white);
+            background-color: var(--bg-dark);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo Styles with Dark Theme Metallic Effect */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.02);
+        }
+
+        .logo-svg-container {
+            position: relative;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
+        }
+
+        .logo-svg {
+            width: 32px;
+            height: 32px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .logo-svg path {
+            fill: url(#dark-metallic) !important;
+            filter: url(#chrome-filter);
+        }
+
+        /* Animated shine effect on logo */
+        .logo-svg-container::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 40%,
+                rgba(255, 255, 255, 0.3) 50%,
+                transparent 60%
+            );
+            transform: rotate(30deg);
+            animation: shine 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes shine {
+            0%, 100% { transform: translateX(-100%) rotate(30deg); }
+            50% { transform: translateX(100%) rotate(30deg); }
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-white);
+            line-height: 1.2;
+        }
+
+        .logo-subtitle {
+            font-size: 0.7rem;
+            color: var(--text-gray);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-white);
+            background: var(--bg-card);
+        }
+
+        .nav-links a.active {
+            color: var(--text-white);
+            background: var(--bg-card);
+        }
+
+        .btn-nav {
+            background: var(--primary-orange);
+            color: var(--text-white) !important;
+            padding: 0.6rem 1.25rem !important;
+            border-radius: 8px !important;
+            font-weight: 600 !important;
+            transition: all 0.3s ease;
+        }
+
+        .btn-nav:hover {
+            background: var(--primary-orange-hover) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-white);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 73px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            color: var(--text-white);
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 80% 20%, rgba(249, 115, 22, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 20% 80%, rgba(30, 41, 59, 0.8) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            color: var(--accent-orange-light);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-badge i {
+            color: #fbbf24;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease 0.1s both;
+            max-width: 800px;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary-orange);
+            position: relative;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            animation: fadeInUp 0.8s ease 0.2s both;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease 0.3s both;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary-orange);
+            color: var(--text-white);
+            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-orange-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-white);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-card);
+            border-color: var(--text-gray);
+        }
+
+        .btn-outline-orange {
+            background: transparent;
+            color: var(--primary-orange);
+            border: 1px solid var(--primary-orange);
+        }
+
+        .btn-outline-orange:hover {
+            background: var(--primary-orange);
+            color: var(--text-white);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-white);
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .stat-value i {
+            color: var(--primary-orange);
+            font-size: 1.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Section Headers */
+        .section-label {
+            color: var(--primary-orange);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 20px;
+            height: 2px;
+            background: var(--primary-orange);
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--text-white);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--bg-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .service-item:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--primary-orange);
+            transform: translateX(10px);
+        }
+
+        .service-icon-box {
+            width: 50px;
+            height: 50px;
+            background: rgba(249, 115, 22, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .service-item:nth-child(1) .service-icon-box { color: #60a5fa; }
+        .service-item:nth-child(2) .service-icon-box { color: #fbbf24; }
+        .service-item:nth-child(3) .service-icon-box { color: #a78bfa; }
+
+        .service-info h3 {
+            font-size: 1.1rem;
+            color: var(--text-white);
+            margin-bottom: 0.25rem;
+        }
+
+        .service-info p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .btn-learn-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-orange);
+            color: var(--text-white);
+            padding: 0.875rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 3rem;
+        }
+
+        .btn-learn-more:hover {
+            background: var(--primary-orange-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+        }
+
+        .delivery-highlight {
+            background: var(--primary-orange);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .delivery-highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: 50px 50px;
+        }
+
+        .delivery-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .delivery-highlight h3 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            position: relative;
+            z-index: 1;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .delivery-highlight p {
+            color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 5rem 2rem;
+            background: var(--bg-dark);
+        }
+
+        .section-header.center {
+            text-align: center;
+        }
+
+        .section-header.center p {
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-orange);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .product-image-box {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card:nth-child(1) .product-image-box { background: linear-gradient(135deg, #3730a3, #312e81); }
+        .product-card:nth-child(2) .product-image-box { background: linear-gradient(135deg, #059669, #047857); }
+        .product-card:nth-child(3) .product-image-box { background: linear-gradient(135deg, #d97706, #b45309); }
+        .product-card:nth-child(4) .product-image-box { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
+        .product-card:nth-child(5) .product-image-box { background: linear-gradient(135deg, #db2777, #be185d); }
+        .product-card:nth-child(6) .product-image-box { background: linear-gradient(135deg, #0891b2, #0e7490); }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-tag {
+            font-size: 0.75rem;
+            color: var(--primary-orange);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-content h3 {
+            font-size: 1.25rem;
+            color: var(--text-white);
+            margin-bottom: 0.75rem;
+        }
+
+        .product-content p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-view-category {
+            width: 100%;
+            padding: 0.875rem;
+            background: var(--bg-dark);
+            color: var(--text-white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-view-category:hover {
+            background: var(--primary-orange);
+            border-color: var(--primary-orange);
+            color: var(--text-white);
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 5rem 2rem;
+            background: #f8fafc;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .review-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-stars {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .review-text {
+            color: #475569;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .reviewer-avatar {
+            width: 45px;
+            height: 45px;
+            background: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .reviewer-info h4 {
+            color: #1e293b;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .reviewer-info span {
+            color: #94a3b8;
+            font-size: 0.875rem;
+        }
+
+        /* Contact CTA Section */
+        .contact-cta {
+            padding: 5rem 2rem;
+            background: var(--bg-dark);
+            text-align: center;
+        }
+
+        .contact-cta .section-label {
+            justify-content: center;
+        }
+
+        .contact-cta .section-label::before {
+            display: none;
+        }
+
+        .contact-cta h2 {
+            font-size: 3rem;
+            color: var(--text-white);
+            margin-bottom: 2rem;
+            font-weight: 800;
+        }
+
+        .contact-cta h2 span {
+            color: var(--primary-orange);
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn-call {
+            background: var(--primary-orange);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-call:hover {
+            background: var(--primary-orange-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(249, 115, 22, 0.3);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-message {
+            background: transparent;
+            color: var(--primary-orange);
+            border: 1px solid var(--primary-orange);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-message:hover {
+            background: var(--primary-orange);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: #020617;
+            color: var(--text-gray);
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-orange);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .footer-brand h3 {
+            color: var(--text-white);
+            font-size: 1.25rem;
+        }
+
+        .footer-section p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .google-rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(30, 41, 59, 0.5);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            color: var(--text-white);
+            border: 1px solid var(--border-color);
+        }
+
+        .google-rating-badge i {
+            color: #fbbf24;
+        }
+
+        .footer-section h4 {
+            color: var(--text-white);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-orange);
+            padding-left: 5px;
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            color: var(--text-gray);
+        }
+
+        .contact-list i {
+            color: var(--primary-orange);
+            margin-top: 0.25rem;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .footer-bottom a {
+            color: var(--primary-orange);
+            text-decoration: none;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #128C7E;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6); }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--bg-dark);
+                flex-direction: column;
+                padding: 2rem;
+                border-top: 1px solid var(--border-color);
+                gap: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-container {
+                padding: 1rem;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+                min-height: auto;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+
+            .contact-cta h2 {
+                font-size: 2rem;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SVG Definitions for Dark Metallic Effect -->
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <!-- Dark Metallic Gradient for Logo -->
+            <linearGradient id="dark-metallic" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+                <stop offset="20%" style="stop-color:#e2e8f0;stop-opacity:1" />
+                <stop offset="40%" style="stop-color:#ffffff;stop-opacity:1" />
+                <stop offset="60%" style="stop-color:#cbd5e1;stop-opacity:1" />
+                <stop offset="80%" style="stop-color:#f1f5f9;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+            </linearGradient>
+            
+            <!-- Chrome Filter for extra shine -->
+            <filter id="chrome-filter" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="0.3" result="blur"/>
+                <feSpecularLighting in="blur" surfaceScale="3" specularConstant="1.2" specularExponent="25" lighting-color="#ffffff" result="specOut">
+                    <fePointLight x="-5000" y="-10000" z="20000"/>
+                </feSpecularLighting>
+                <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
+                <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litPaint"/>
+                <feMerge>
+                    <feMergeNode in="litPaint"/>
+                </feMerge>
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-svg-container">
+                    <svg class="logo-svg" viewBox="0 0 61.18 61.12" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23.84,21.67c0,2.22,0,4.45.02,6.67,0,.17.24.37.42.49.12.08.33.03.49.03,3.86,0,7.73,0,11.59,0,.89,0,.91-.02.91-.93,0-3.11.01-6.22,0-9.32,0-1.68-.96-2.63-2.62-2.75-.24-.02-.47-.23-.7-.35.25-.13.51-.37.76-.37,3.78-.02,7.56-.02,11.34-.01.27,0,.55.02.81.09.15.04.28.18.41.28-.13.12-.24.27-.39.35-.12.06-.29.03-.43.04-1.44.07-2.37,1.03-2.38,2.47,0,5.12.01,10.25,0,15.37-.01,3.9-.11,7.81-.09,11.71,0,1.29.2,2.59.39,3.87.35,2.33,1.79,3.87,3.78,4.96.09.05.21.08.27.15.15.18.4.41.37.57-.03.17-.34.37-.55.41-2.65.41-5.21.29-7.41-1.51-1.79-1.46-2.78-3.41-3.19-5.64-.24-1.27-.37-2.58-.38-3.87-.05-3.72-.02-7.43-.02-11.15,0-.92-.03-.96-.96-.95-2.22.03-4.45.09-6.67.09-1.49,0-2.98-.08-4.47-.09-1.21-.01-1.25.05-1.25,1.22,0,2.92,0,5.84,0,8.76,0,1.67.98,2.7,2.65,2.85.19.02.38.17.56.25-.19.09-.37.24-.56.25-3.93.06-7.85.09-11.78.13-.15,0-.31.02-.44-.03-.14-.06-.24-.19-.36-.29.13-.11.24-.26.39-.31.34-.1.7-.12,1.04-.23,1.13-.38,1.69-1.17,1.69-2.37,0-5.02,0-10.04,0-15.06,0-4.68,0-9.36,0-14.03,0-1.55-.28-3.05-.85-4.49-.6-1.52-1.72-2.56-3.19-3.23-.06-.03-.13-.03-.17-.08-.18-.18-.34-.37-.51-.56.24-.13.47-.36.72-.38.67-.05,1.35-.07,2.01,0,4.21.46,7.24,3.03,8.28,7.15.33,1.31.45,2.69.51,4.04.08,1.93.02,3.86.02,5.79h-.08Z"/>
+                        <path d="M30.58,58.49c-6.19-.04-11.94-1.93-16.95-5.8-6.1-4.71-9.71-10.94-10.74-18.59-.6-4.49-.15-8.92,1.47-13.19,1.47-3.88,3.6-7.34,6.63-10.21.91-.86,1.87-1.68,2.8-2.53.33-.3.62-.37.85.08.36.71.73,1.41,1.06,2.13.17.37.06.66-.28.93-4.52,3.57-7.39,8.2-8.69,13.79-.74,3.18-.79,6.4-.25,9.63.71,4.31,2.5,8.15,5.3,11.47,3.95,4.68,8.98,7.57,15.05,8.57,3.8.63,7.55.26,11.19-.9,1.04-.33,1.55.31,2.26.66.52.26,1,.58,1.52.84.34.17.37.4.14.64-.17.17-.4.3-.63.39-3.39,1.34-6.9,2.09-10.71,2.1Z"/>
+                        <path d="M19.62,4.84c.64-.26,1.21-.51,1.8-.71,3.73-1.25,7.55-1.74,11.48-1.4,5.76.5,10.88,2.54,15.35,6.19,3.9,3.19,6.8,7.14,8.54,11.87.97,2.62,1.53,5.34,1.71,8.16.31,5.02-.74,9.71-2.96,14.18-1.74,3.5-4.16,6.49-7.12,9.04-.77.66-1.03.64-1.62-.16-.35-.47-.65-.98-.95-1.48-.22-.38-.14-.7.22-.99,3.11-2.49,5.42-5.6,7.01-9.23,1.21-2.77,1.88-5.69,1.97-8.72.08-2.55-.09-5.07-.79-7.54-.61-2.17-1.5-4.22-2.67-6.16-2.41-3.98-5.72-7.01-9.82-9.16-2.41-1.27-5.01-2.01-7.72-2.41-2.99-.44-5.94-.24-8.88.35-.76.15-1.5.41-2.24.63-.41.12-.68.03-.99-.3-.7-.72-1.47-1.36-2.32-2.14Z"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">Hybrid Office Supplies</span>
+                    <span class="logo-subtitle">LLC • ABU DHABI, UAE</span>
+                </div>
+            </a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#services">Delivery</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact" class="btn-nav">Contact Us</a></li>
+            </ul>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-badge">
+                <i class="fas fa-star"></i>
+                <span>5.0 RATING • ABU DHABI'S TRUSTED SUPPLIER</span>
+            </div>
+            
+            <h1>Your Trusted <span>Office Supplies</span> Partner in Abu Dhabi</h1>
+            
+            <p>Reliable office supplies, stationery, printing materials, and business essentials delivered quickly across Abu Dhabi.</p>
+            
+            <div class="hero-buttons">
+                <a href="#products" class="btn btn-primary">
+                    <i class="fas fa-shopping-bag"></i>
+                    Shop Products
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-file-invoice"></i>
+                    Request a Quote
+                </a>
+                <a href="#contact" class="btn btn-outline-orange">
+                    <i class="fas fa-phone"></i>
+                    Contact Us
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-value">5.0 <i class="fas fa-star"></i></span>
+                    <span class="stat-label">Google Rating</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">500+</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">Same <span style="color: var(--primary-orange);">Day</span></span>
+                    <span class="stat-label">Delivery Available</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <div class="section-label">Our Services</div>
+                <h2>Fast Delivery Across Abu Dhabi</h2>
+                <p>We deliver office supplies quickly and reliably to businesses, schools, and organizations throughout Abu Dhabi.</p>
+            </div>
+
+            <div class="services-list">
+                <div class="service-item scroll-reveal">
+                    <div class="service-icon-box">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="service-info">
+                        <h3>Corporate Office Delivery</h3>
+                        <p>Regular supply replenishment for businesses of all sizes</p>
+                    </div>
+                </div>
+
+                <div class="service-item scroll-reveal">
+                    <div class="service-icon-box">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="service-info">
+                        <h3>School & Education Supply</h3>
+                        <p>Bulk stationery for schools and educational institutions</p>
+                    </div>
+                </div>
+
+                <div class="service-item scroll-reveal">
+                    <div class="service-icon-box">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <div class="service-info">
+                        <h3>Bulk & Custom Orders</h3>
+                        <p>Custom supply packages tailored to your company's needs</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#contact" class="btn-learn-more scroll-reveal">
+                Learn More About Delivery
+            </a>
+
+            <div class="delivery-highlight scroll-reveal">
+                <div class="delivery-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>Same Day</h3>
+                <p>Delivery Available in Abu Dhabi</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header center scroll-reveal">
+                <div class="section-label" style="justify-content: center;">Our Products</div>
+                <h2>Everything Your Office Needs</h2>
+                <p>Explore our wide range of office supplies, stationery, and printing materials.</p>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card scroll-reveal">
+                    <div class="product-image-box">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-tag">Stationery</div>
+                        <h3>Office Stationery</h3>
+                        <p>Pens, pencils, notebooks, markers, and sticky notes for everyday office use.</p>
+                        <button class="btn-view-category" onclick="openInquiry('Office Stationery')">
+                            View Category <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card scroll-reveal">
+                    <div class="product-image-box">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-tag">Paper</div>
+                        <h3>Paper Products</h3>
+                        <p>A4 paper, printing paper, copy paper, and cardboard sheets in bulk.</p>
+                        <button class="btn-view-category" onclick="openInquiry('Paper Products')">
+                            View Category <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card scroll-reveal">
+                    <div class="product-image-box">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-tag">Print</div>
+                        <h3>Printer & Toner</h3>
+                        <p>Printer cartridges, toners, and ink supplies for all major printer brands.</p>
+                        <button class="btn-view-category" onclick="openInquiry('Printer & Toner')">
+                            View Category <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card scroll-reveal">
+                    <div class="product-image-box">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-tag">Equipment</div>
+                        <h3>Office Equipment</h3>
+                        <p>Staplers, paper cutters, punch machines, and desk organizers.</p>
+                        <button class="btn-view-category" onclick="openInquiry('Office Equipment')">
+                            View Category <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card scroll-reveal">
+                    <div class="product-image-box">
+                        <i class="fas fa-folder-open"></i>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-tag">Essentials</div>
+                        <h3>Office Essentials</h3>
+                        <p>Files, folders, clipboards, envelopes, tape, and adhesives.</p>
+                        <button class="btn-view-category" onclick="openInquiry('Office Essentials')">
+                            View Category <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card scroll-reveal">
+                    <div class="product-image-box">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-tag">Corporate</div>
+                        <h3>Corporate Packages</h3>
+                        <p>Custom bulk packages tailored for your business requirements.</p>
+                        <button class="btn-view-category" onclick="openInquiry('Corporate Packages')">
+                            View Category <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="section-header center scroll-reveal">
+                <div class="section-label" style="justify-content: center;">Testimonials</div>
+                <h2>What Our Customers Say</h2>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card scroll-reveal">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Owner is a very nice gentleman. Great service and very helpful with our office supply needs. Highly recommend!"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">AH</div>
+                        <div class="reviewer-info">
+                            <h4>Ahmed Hassan</h4>
+                            <span>Google Review • 5★</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card scroll-reveal">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Excellent service and on-time delivery. We order our A4 paper and stationery regularly and they never disappoint."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">SM</div>
+                        <div class="reviewer-info">
+                            <h4>Sara Mohammed</h4>
+                            <span>Google Review • 5★</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card scroll-reveal">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Very good quality office supplies at competitive prices. The team is professional and the delivery is always fast."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">KA</div>
+                        <div class="reviewer-info">
+                            <h4>Khalid Al Rashidi</h4>
+                            <span>Google Review • 5★</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="contact-cta" id="contact">
+        <div class="container">
+            <div class="section-label">Get In Touch</div>
+            <h2 class="scroll-reveal">Ready to Order?<br>Contact <span>Us Today</span></h2>
+            
+            <div class="contact-buttons scroll-reveal">
+                <a href="tel:+97128770811" class="btn-call">
+                    <i class="fas fa-phone"></i>
+                    Call Now: +971 2 877 0811
+                </a>
+                <a href="https://wa.me/97128770811" class="btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp Us
+                </a>
+                <a href="#contact-form" class="btn-message" onclick="scrollToContact(event)">
+                    <i class="fas fa-envelope"></i>
+                    Send a Message
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-brand">
+                    <div class="footer-brand-icon">H</div>
+                    <h3>Hybrid Office Supplies LLC</h3>
+                </div>
+                <p>Your trusted office supply partner in Abu Dhabi. Quality stationery, printing materials, and business essentials delivered quickly across the UAE.</p>
+                <div class="google-rating-badge">
+                    <i class="fas fa-star"></i>
+                    <span>5.0 Google Rating • Abu Dhabi</span>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#services">Delivery</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Products</h4>
+                <ul class="footer-links">
+                    <li><a href="#products">Office Stationery</a></li>
+                    <li><a href="#products">Paper Products</a></li>
+                    <li><a href="#products">Office Equipment</a></li>
+                    <li><a href="#products">Printer & Toner</a></li>
+                    <li><a href="#products">Office Essentials</a></li>
+                    <li><a href="#contact">Request a Quote</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Mohamed Bin Zayed City – ME12, Abu Dhabi, UAE</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+971 2 877 0811</span>
+                    </li>
+                    <li>
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp Us</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <span>Mon–Sat: 9 AM – 9 PM</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 <a href="#">Hybrid Office Supplies LLC</a> • Abu Dhabi, UAE • All Rights Reserved</p>
+            <p>Office Supplies • Stationery • Printing Materials • Abu Dhabi</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/97128770811" class="whatsapp-float" target="_blank" aria-label="Contact on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach((el) => observer.observe(el));
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        function scrollToContact(e) {
+            e.preventDefault();
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Inquiry Button Function
+        function openInquiry(productCategory) {
+            const contactSection = document.getElementById('contact');
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+            
+            setTimeout(() => {
+                alert(`Thank you for your interest in ${productCategory}! Please use the contact buttons above to reach us.`);
+            }, 800);
+        }
+
+        // Active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
